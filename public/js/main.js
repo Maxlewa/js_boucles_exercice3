@@ -82,21 +82,26 @@ let typeNumber = []
 let typeObject = []
 let typeAutre = []
 
-donnees.forEach((el, i) => {
-    if (typeof el == 'string') {
-        console.log(`${typeof el} = ${el} à l'indice ${i}`);
-        typeString.push(el)
-    } else if (typeof el == 'number') {
-        console.log(`${typeof el} = ${el} à l'indice ${i}`);
-        typeNumber.push(el)
-    } else if (typeof el == 'object') {
-        console.log(`${typeof el} = ${el} à l'indice ${i}`);
-        typeObject.push(el)
+for (let i = 0; i < donnees.length; i++) {
+    if (typeof donnees[i] == 'string') {
+        console.log(`${typeof donnees[i]} = ${donnees[i]} à l'indice ${i}`);
+        typeString.push(donnees[i])
+
+    } else if (typeof donnees[i] == 'number') {
+        console.log(`${typeof donnees[i]} = ${donnees[i]} à l'indice ${i}`);
+        typeNumber.push(donnees[i])
+
+    } else if (typeof donnees[i] == 'object') {
+        console.log(`${typeof donnees[i]} = ${donnees[i]} à l'indice ${i}`);
+        typeObject.push(donnees[i])
+
     } else {
-        console.log(`${typeof el} = ${el} à l'indice ${i}`);
-        typeAutre.push(el)
+        console.log(`${typeof donnees[i]} = ${donnees[i]} à l'indice ${i}`);
+        typeAutre.push(donnees[i])
     }
-});
+    donnees.splice(i, 1)
+    i--
+};
 
 console.log(typeString);
 console.log(typeNumber);
